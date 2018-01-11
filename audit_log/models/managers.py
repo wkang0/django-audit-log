@@ -205,11 +205,11 @@ class AuditLog(object):
                                                 )
             return result
 
-        action_user_field = LastUserfield.remote_fieldated_name = rel_name, editable = False)
+        action_user_field = LastUserfield(reated_name = rel_name, editable = False)
 
         #check if the manager has been attached to auth user model
         if [model._meta.app_label, model.__name__] == getattr(settings, 'AUTH_USER_MODEL', 'auth.User').split("."):
-            action_user_field = LastUserfield.remote_fieldated_name = rel_name, editable = False, to = 'self')
+            action_user_field = LastUserfield(reated_name = rel_name, editable = False, to = 'self')
 
         return {
             'action_id' : models.AutoField(primary_key = True),
