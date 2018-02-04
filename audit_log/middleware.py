@@ -29,7 +29,7 @@ class UserLoggingMiddleware(MiddlewareMixin):
         if settings.DISABLE_AUDIT_LOG:
             return
         if not request.method in ('GET', 'HEAD', 'OPTIONS', 'TRACE'):
-            if hasattr(request, 'user') and request.user.is_authenticated():
+            if hasattr(request, 'user') and request.user.is_authenticated:
                 user = request.user
             else:
                 user = None
