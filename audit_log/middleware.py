@@ -103,7 +103,7 @@ class JWTAuthMiddleware(MiddlewareMixin):
         from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
         user = get_user(request)
-        if user.is_authenticated():
+        if user.is_authenticated:
             return user
         try:
             user_jwt = JSONWebTokenAuthentication().authenticate(Request(request))
